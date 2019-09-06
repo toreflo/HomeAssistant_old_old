@@ -1,0 +1,28 @@
+interval1_start:
+  name: Accensione
+  has_date: false
+  has_time: true
+interval1_end:
+  name: Spegnimento
+  has_date: false
+  has_time: true
+interval2_start:
+  name: Accensione
+  has_date: false
+  has_time: true
+interval2_end:
+  name: Spegnimento
+  has_date: false
+  has_time: true
+interval3_start:
+  name: Accensione
+  has_date: false
+  has_time: true
+interval3_end:
+  name: Spegnimento
+  has_date: false
+  has_time: true
+todel_time:
+  name: Conversione tempo
+  has_date: false
+  has_time: true

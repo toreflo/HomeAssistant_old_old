@@ -1,0 +1,11 @@
+enable_interval1:
+  name: Abilitazione
+enable_interval2:
+  name: Abilitazione
+enable_interval3:
+  name: Abilitazione
+climate_command:
+  name: Comando alla caldaia
+manual_heat_on:
+  name: Accensione manuale
+
