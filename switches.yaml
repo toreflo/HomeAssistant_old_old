@@ -1,0 +1,13 @@
+- platform: template
+  switches:
+    blind:
+      friendly_name: "Blind"
+      value_template: "{{ is_state_attr('switch.blind_toggle', 'sensor_state', 'on') }}"
+      turn_on:
+        service: switch.toggle
+        data:
+          entity_id: switch.blind_toggle
+      turn_off:
+        service: switch.toggle
+        data:
+          entity_id: switch.blind_toggle

@@ -1,0 +1,41 @@
+- alias: 'Accensione caldaia'
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.heat_on
+      to: 'on'
+  action:
+    - service: climate.turn_on
+      data_template:
+        { "entity_id": "climate.caldaia" }
+  
+- alias: 'Spegnimento caldaia'
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.heat_on
+      to: 'off'
+  action:
+    - service: climate.turn_off
+      data_template:
+        { "entity_id": "climate.caldaia" }
+
+- alias: 'Disabilitazione fascia temporanea cronotermostato'
+  trigger:
+    - platform: time
+      at: "02:00:00"
+  action:
+    - service: input_boolean.turn_off
+      data_template:
+        { "entity_id": "input_boolean.enable_interval3" }
+
+
+#- alias: 'todel convert time'
+#  trigger:
+#    platform: state
+#    entity_id: input_number.todel_slider1
+#  action:
+#    - service: input_datetime.set_datetime
+#      data_template:
+#        entity_id: input_datetime.todel_time
+#        time: '{{ states("input_number.todel_slider1") | int }}'

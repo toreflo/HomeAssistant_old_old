@@ -1,0 +1,63 @@
+- platform: template
+  sensors:
+    sun_up:
+      friendly_name: "Sun is up"
+      value_template: >-
+        {{ state_attr('sun.sun', 'elevation')|float > 0 }}
+
+- platform: template
+  sensors:
+    interval1:
+      friendly_name: Output
+      entity_id:
+        sensor.time
+      value_template: >
+        {{ state_attr('input_datetime.interval1_start','timestamp') <= (now().hour * 3600) + (now().minute * 60) < state_attr('input_datetime.interval1_end','timestamp') }}
+
+- platform: template
+  sensors:
+    interval2:
+      friendly_name: Output
+      entity_id:
+        sensor.time
+      value_template: >
+        {{ state_attr('input_datetime.interval2_start','timestamp') <= (now().hour * 3600) + (now().minute * 60) < state_attr('input_datetime.interval2_end','timestamp') }}
+
+- platform: template
+  sensors:
+    interval3:
+      friendly_name: Output
+      entity_id:
+        sensor.time
+      value_template: >
+        {{ state_attr('input_datetime.interval3_start','timestamp') <= (now().hour * 3600) + (now().minute * 60) < state_attr('input_datetime.interval3_end','timestamp') }}
+
+- platform: template
+  sensors:
+    on1:
+      friendly_name: Comando
+      value_template: >
+        {{ is_state('input_boolean.enable_interval1', 'on') and is_state('binary_sensor.interval1', 'on') }}
+
+- platform: template
+  sensors:
+    on2:
+      friendly_name: Comando
+      value_template: >
+        {{ is_state('input_boolean.enable_interval2', 'on') and is_state('binary_sensor.interval2', 'on') }}
+
+- platform: template
+  sensors:
+    on3:
+      friendly_name: Comando
+      value_template: >
+        {{ is_state('input_boolean.enable_interval3', 'on') and is_state('binary_sensor.interval3', 'on') }}
+
+- platform: template
+  sensors:
+    heat_on: 
+      friendly_name: Comando al climate
+      value_template: >
+        {{ (is_state('binary_sensor.on1', 'on') or is_state('binary_sensor.on2', 'on')  or is_state('binary_sensor.on3', 'on') or is_state('input_boolean.manual_heat_on', 'on')) }}
+
+

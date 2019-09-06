@@ -1,0 +1,27 @@
+date_and_time:
+   view: yes
+   icon: mdi:home 
+   entities:
+     - group.date_time
+date_time:
+  name: Date and Time
+  entities:
+    - sensor.time
+    - sensor.date
+    - sensor.date_time
+    - sensor.time_date
+    - sensor.time_utc
+
+cronot_mattina:
+  name: Mattina
+  entities:
+    - binary_sensor.interval1
+    - input_datetime.interval1_start
+    - input_datetime.interval1_end
+
+cronot_pomeriggio:
+  name: Pomeriggio
+  entities:
+    - binary_sensor.interval2
+    - input_datetime.interval2_start
+    - input_datetime.interval2_end

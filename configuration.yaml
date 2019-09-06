@@ -1,0 +1,76 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+sensor: !include sensors.yaml
+binary_sensor: !include binary_sensors.yaml
+switch: !include switches.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+recorder:
+  purge_keep_days: 30
+
+input_datetime:
+  interval1_start:
+    name: Accensione
+    has_date: false
+    has_time: true
+  interval1_end:
+    name: Spegnimento
+    has_date: false
+    has_time: true
+  interval2_start:
+    name: Accensione
+    has_date: false
+    has_time: true
+  interval2_end:
+    name: Spegnimento
+    has_date: false
+    has_time: true
+  interval3_start:
+    name: Accensione
+    has_date: false
+    has_time: true
+  interval3_end:
+    name: Spegnimento
+    has_date: false
+    has_time: true
+  todel_time:
+    name: Conversione tempo
+    has_date: false
+    has_time: true
+
+input_boolean:
+  enable_interval1:
+    name: Abilitazione
+  enable_interval2:
+    name: Abilitazione
+  enable_interval3:
+    name: Abilitazione
+  climate_command:
+    name: Comando alla caldaia
+  manual_heat_on:
+    name: Accensione manuale
+
+climate:
+  - platform: generic_thermostat
+    name: Caldaia
+    heater: input_boolean.climate_command
+    target_sensor: sensor.28_041685abbeff_temperature
+
+input_number:
+ todel_slider1:
+    name: ''
+    min: 0
+    max: 86400
+    step: 15
