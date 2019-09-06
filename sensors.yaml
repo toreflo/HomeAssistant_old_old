@@ -17,10 +17,10 @@
 
 - platform: systemmonitor
   resources:
+    - type: load_5m
     - type: disk_use_percent
       arg: /mnt/drive
     - type: memory_use_percent
-    - type: processor_use
 
 - platform: time_date
   display_options:

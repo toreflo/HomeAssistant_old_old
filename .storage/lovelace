@@ -227,7 +227,7 @@
                 },
                 {
                     "badges": [
-                        "sensor.processor_use",
+                        "sensor.load_5m",
                         "sensor.cpu_temperature",
                         "sensor.memory_use_percent",
                         "sensor.disk_use_percent_mnt_drive",
