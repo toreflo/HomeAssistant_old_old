@@ -1,0 +1,245 @@
+{
+    "data": {
+        "config": {
+            "title": "Casa",
+            "views": [
+                {
+                    "badges": [
+                        "person.salvatore",
+                        "sun.sun"
+                    ],
+                    "cards": [
+                        {
+                            "entity": "sensor.28_041685abbeff_temperature",
+                            "graph": "line",
+                            "hours_to_show": 24,
+                            "name": "Temperatura salotto",
+                            "theme": "default",
+                            "type": "sensor"
+                        },
+                        {
+                            "entity": "weather.casa",
+                            "type": "weather-forecast"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_number.todel_slider1"
+                                },
+                                {
+                                    "entity": "input_datetime.todel_time"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Prova slider",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "media_player.salotto",
+                            "type": "media-control"
+                        }
+                    ],
+                    "path": "default_view",
+                    "title": "Home"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "climate.caldaia",
+                            "name": "Caldaia",
+                            "theme": "default",
+                            "type": "thermostat"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "input_boolean.manual_heat_on"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "type": "entities"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "card": {
+                                                "entities": [
+                                                    {
+                                                        "entity": "input_datetime.interval1_start"
+                                                    },
+                                                    {
+                                                        "entity": "input_datetime.interval1_end"
+                                                    },
+                                                    {
+                                                        "entity": "binary_sensor.interval1"
+                                                    }
+                                                ],
+                                                "show_name": false,
+                                                "type": "glance"
+                                            },
+                                            "conditions": [
+                                                {
+                                                    "entity": "input_boolean.enable_interval1",
+                                                    "state": "on"
+                                                }
+                                            ],
+                                            "type": "conditional"
+                                        },
+                                        {
+                                            "card": {
+                                                "entities": [
+                                                    {
+                                                        "entity": "input_datetime.interval2_start"
+                                                    },
+                                                    {
+                                                        "entity": "input_datetime.interval2_end"
+                                                    },
+                                                    {
+                                                        "entity": "binary_sensor.interval2"
+                                                    }
+                                                ],
+                                                "show_name": false,
+                                                "type": "glance"
+                                            },
+                                            "conditions": [
+                                                {
+                                                    "entity": "input_boolean.enable_interval2",
+                                                    "state": "on"
+                                                }
+                                            ],
+                                            "type": "conditional"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "card": {
+                                                "entities": [
+                                                    {
+                                                        "entity": "input_datetime.interval3_start"
+                                                    },
+                                                    {
+                                                        "entity": "input_datetime.interval3_end"
+                                                    },
+                                                    {
+                                                        "entity": "binary_sensor.interval3"
+                                                    }
+                                                ],
+                                                "show_name": false,
+                                                "type": "glance"
+                                            },
+                                            "conditions": [
+                                                {
+                                                    "entity": "input_boolean.enable_interval3",
+                                                    "state": "on"
+                                                }
+                                            ],
+                                            "type": "conditional"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.interval1"
+                                },
+                                {
+                                    "entity": "input_datetime.interval1_start"
+                                },
+                                {
+                                    "entity": "input_datetime.interval1_end"
+                                },
+                                {
+                                    "entity": "input_number.todel_slider1"
+                                },
+                                {
+                                    "entity": "input_boolean.enable_interval1"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Mattina",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.interval2"
+                                },
+                                {
+                                    "entity": "input_datetime.interval2_start"
+                                },
+                                {
+                                    "entity": "input_datetime.interval2_end"
+                                },
+                                {
+                                    "entity": "input_boolean.enable_interval2"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Pomeriggio",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.interval3"
+                                },
+                                {
+                                    "entity": "input_datetime.interval3_start"
+                                },
+                                {
+                                    "entity": "input_datetime.interval3_end"
+                                },
+                                {
+                                    "entity": "input_boolean.enable_interval3"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Temporaneo",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "input_boolean.climate_command"
+                                },
+                                {
+                                    "entity": "binary_sensor.heat_on"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Stati interni",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:thermostat-box",
+                    "path": "cronotermostato",
+                    "title": "Cronotermostato"
+                },
+                {
+                    "badges": [
+                        "sensor.processor_use",
+                        "sensor.cpu_temperature",
+                        "sensor.memory_use_percent",
+                        "sensor.disk_use_percent_mnt_drive",
+                        "sensor.db_size"
+                    ],
+                    "cards": [],
+                    "icon": "mdi:server",
+                    "title": "System"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}
