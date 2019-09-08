@@ -19,24 +19,20 @@ script: !include scripts.yaml
 input_datetime: !include input_datetime.yaml
 input_boolean: !include input_boolean.yaml
 
-input_number:
- todel_slider1:
-    name: ''
-    min: 0
-    max: 86400
-    step: 15
-
 recorder:
   purge_keep_days: 365
   include:
     entities:
       - sensor.28_041685abbeff_temperature
+      - sensor.min_temp
+      - sensor.max_temp
       - sensor.cpu_temperature 
       - sensor.disk_use_percent_mnt_drive
       - sensor.memory_use_percent
       - sensor.db_size
       - sensor.load_5m
       - climate.caldaia
+      - input_boolean.climate_command
 
 climate:
   - platform: generic_thermostat

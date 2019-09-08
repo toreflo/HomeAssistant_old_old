@@ -6,7 +6,10 @@
                 {
                     "badges": [
                         "person.salvatore",
-                        "sun.sun"
+                        "sun.sun",
+                        "sensor.temp_stats_mean",
+                        "sensor.min_temp",
+                        "sensor.max_temp"
                     ],
                     "cards": [
                         {
@@ -20,19 +23,6 @@
                         {
                             "entity": "weather.casa",
                             "type": "weather-forecast"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "input_number.todel_slider1"
-                                },
-                                {
-                                    "entity": "input_datetime.todel_time"
-                                }
-                            ],
-                            "show_header_toggle": false,
-                            "title": "Prova slider",
-                            "type": "entities"
                         },
                         {
                             "entity": "media_player.salotto",
@@ -157,9 +147,6 @@
                                 },
                                 {
                                     "entity": "input_datetime.interval1_end"
-                                },
-                                {
-                                    "entity": "input_number.todel_slider1"
                                 },
                                 {
                                     "entity": "input_boolean.enable_interval1"

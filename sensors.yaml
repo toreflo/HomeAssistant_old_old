@@ -29,3 +29,21 @@
     - 'date_time'
     - 'time_date'
     - 'time_utc'
+
+- platform: statistics
+  entity_id: sensor.28_041685abbeff_temperature
+  name: Temp stats
+  sampling_size: 1440
+  max_age:
+    days: 1
+
+- platform: template
+  sensors:
+    max_temp:
+      friendly_name: T max
+      unit_of_measurement: "°C"
+      value_template: "{{ state_attr('sensor.temp_stats_mean','max_value') | float }}"
+    min_temp:
+      friendly_name: T min
+      unit_of_measurement: "°C"
+      value_template: "{{ state_attr('sensor.temp_stats_mean','min_value') | float }}"
