@@ -1,0 +1,27 @@
+- platform: command_line
+  name: CPU Temperature
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  # If errors occur, remove degree symbol below
+  unit_of_measurement: "°C"
+  value_template: '{{ value | multiply(0.001) | round(1) }}'
+
+- platform: command_line
+  name: DB size
+  command: "ls -l /mnt/drive/hassio/home-assistant_v2.db | gawk '{print $5}'"
+  unit_of_measurement: "M"
+  value_template: '{{ ((value | int) / 1024 / 1024) | int }}'
+
+- platform: systemmonitor
+  resources:
+    - type: load_5m
+    - type: disk_use_percent
+      arg: /mnt/drive
+    - type: memory_use_percent
+
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+    - 'date_time'
+    - 'time_date'
+    - 'time_utc'
