@@ -25,10 +25,6 @@
 
 - platform: template
   sensors:
-    day_mean:
-      friendly_name: Day Tmean
-      unit_of_measurement: "°C"
-      value_template: "{{ state_attr('sensor.day_stats_mean','mean') | float }}"
     day_max:
       friendly_name: Day Tmax
       unit_of_measurement: "°C"
@@ -37,10 +33,6 @@
       friendly_name: Day Tmin
       unit_of_measurement: "°C"
       value_template: "{{ state_attr('sensor.day_stats_mean','min_value') | float }}"
-    week_mean:
-      friendly_name: Week Tmean
-      unit_of_measurement: "°C"
-      value_template: "{{ state_attr('sensor.week_stats_mean','mean') | float }}"
     week_max:
       friendly_name: Week Tmax
       unit_of_measurement: "°C"
@@ -49,10 +41,6 @@
       friendly_name: Week Tmin
       unit_of_measurement: "°C"
       value_template: "{{ state_attr('sensor.week_stats_mean','min_value') | float }}"
-    month_mean:
-      friendly_name: Month Tmean
-      unit_of_measurement: "°C"
-      value_template: "{{ state_attr('sensor.month_stats_mean','mean') | float }}"
     month_max:
       friendly_name: Month Tmax
       unit_of_measurement: "°C"

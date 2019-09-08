@@ -35,9 +35,6 @@
                                 },
                                 {
                                     "entity": "sensor.day_max"
-                                },
-                                {
-                                    "entity": "sensor.day_mean"
                                 }
                             ],
                             "show_name": false,
@@ -54,9 +51,6 @@
                                 },
                                 {
                                     "entity": "sensor.week_max"
-                                },
-                                {
-                                    "entity": "sensor.week_mean"
                                 }
                             ],
                             "show_name": false,
@@ -73,9 +67,6 @@
                                 },
                                 {
                                     "entity": "sensor.month_max"
-                                },
-                                {
-                                    "entity": "sensor.month_mean"
                                 }
                             ],
                             "show_name": false,
