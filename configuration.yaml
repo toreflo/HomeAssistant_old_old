@@ -24,8 +24,15 @@ recorder:
   include:
     entities:
       - sensor.28_041685abbeff_temperature
-      - sensor.min_temp
-      - sensor.max_temp
+      - sensor.day_mean
+      - sensor.day_min
+      - sensor.day_max
+      - sensor.week_mean
+      - sensor.week_min
+      - sensor.week_max
+      - sensor.month_mean
+      - sensor.month_min
+      - sensor.month_max
       - sensor.cpu_temperature 
       - sensor.disk_use_percent_mnt_drive
       - sensor.memory_use_percent

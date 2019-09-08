@@ -4,18 +4,60 @@
 
 - platform: statistics
   entity_id: sensor.28_041685abbeff_temperature
-  name: Temp stats
+  name: day stats
   sampling_size: 1440
   max_age:
     days: 1
 
+- platform: statistics
+  entity_id: sensor.28_041685abbeff_temperature
+  name: week stats
+  sampling_size: 10080
+  max_age:
+    days: 7
+
+- platform: statistics
+  entity_id: sensor.28_041685abbeff_temperature
+  name: month stats
+  sampling_size: 43200
+  max_age:
+    days: 30
+
 - platform: template
   sensors:
-    max_temp:
-      friendly_name: T max
+    day_mean:
+      friendly_name: Day Tmean
       unit_of_measurement: "°C"
-      value_template: "{{ state_attr('sensor.temp_stats_mean','max_value') | float }}"
-    min_temp:
-      friendly_name: T min
+      value_template: "{{ state_attr('sensor.day_stats_mean','mean') | float }}"
+    day_max:
+      friendly_name: Day Tmax
       unit_of_measurement: "°C"
-      value_template: "{{ state_attr('sensor.temp_stats_mean','min_value') | float }}"
+      value_template: "{{ state_attr('sensor.day_stats_mean','max_value') | float }}"
+    day_min:
+      friendly_name: Day Tmin
+      unit_of_measurement: "°C"
+      value_template: "{{ state_attr('sensor.day_stats_mean','min_value') | float }}"
+    week_mean:
+      friendly_name: Week Tmean
+      unit_of_measurement: "°C"
+      value_template: "{{ state_attr('sensor.week_stats_mean','mean') | float }}"
+    week_max:
+      friendly_name: Week Tmax
+      unit_of_measurement: "°C"
+      value_template: "{{ state_attr('sensor.week_stats_mean','max_value') | float }}"
+    week_min:
+      friendly_name: Week Tmin
+      unit_of_measurement: "°C"
+      value_template: "{{ state_attr('sensor.week_stats_mean','min_value') | float }}"
+    month_mean:
+      friendly_name: Month Tmean
+      unit_of_measurement: "°C"
+      value_template: "{{ state_attr('sensor.month_stats_mean','mean') | float }}"
+    month_max:
+      friendly_name: Month Tmax
+      unit_of_measurement: "°C"
+      value_template: "{{ state_attr('sensor.month_stats_mean','max_value') | float }}"
+    month_min:
+      friendly_name: Month Tmin
+      unit_of_measurement: "°C"
+      value_template: "{{ state_attr('sensor.month_stats_mean','min_value') | float }}"

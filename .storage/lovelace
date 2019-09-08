@@ -6,10 +6,7 @@
                 {
                     "badges": [
                         "person.salvatore",
-                        "sun.sun",
-                        "sensor.temp_stats_mean",
-                        "sensor.min_temp",
-                        "sensor.max_temp"
+                        "sun.sun"
                     ],
                     "cards": [
                         {
@@ -27,6 +24,63 @@
                         {
                             "entity": "media_player.salotto",
                             "type": "media-control"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.day_stats_mean"
+                                },
+                                {
+                                    "entity": "sensor.day_min"
+                                },
+                                {
+                                    "entity": "sensor.day_max"
+                                },
+                                {
+                                    "entity": "sensor.day_mean"
+                                }
+                            ],
+                            "show_name": false,
+                            "title": "Giorno",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.week_stats_mean"
+                                },
+                                {
+                                    "entity": "sensor.week_min"
+                                },
+                                {
+                                    "entity": "sensor.week_max"
+                                },
+                                {
+                                    "entity": "sensor.week_mean"
+                                }
+                            ],
+                            "show_name": false,
+                            "title": "Settimana",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.month_stats_mean"
+                                },
+                                {
+                                    "entity": "sensor.month_min"
+                                },
+                                {
+                                    "entity": "sensor.month_max"
+                                },
+                                {
+                                    "entity": "sensor.month_mean"
+                                }
+                            ],
+                            "show_name": false,
+                            "title": "Mese",
+                            "type": "glance"
                         }
                     ],
                     "path": "default_view",
