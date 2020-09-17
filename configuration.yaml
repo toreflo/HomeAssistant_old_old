@@ -20,7 +20,7 @@ input_datetime: !include input_datetime.yaml
 input_boolean: !include input_boolean.yaml
 
 recorder:
-  purge_keep_days: 365
+  purge_keep_days: 31
   include:
     entities:
       - sensor.28_041685abbeff_temperature
